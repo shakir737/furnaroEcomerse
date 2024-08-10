@@ -1,7 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    reactCompiler: true,
-  },
+  webpack: (config, { isServer }) => {
+      if (!isServer) {
+        Object.assign(config.resolve.alias, {
+          'react': 'preact/compat',
+          'react-dom/test-utils': 'preact/test-utils',
+          'react-dom': 'preact/compat',
+        })
+      }
+      return config
+    },
 }
+
 module.exports = nextConfig
