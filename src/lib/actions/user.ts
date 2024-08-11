@@ -22,7 +22,8 @@ export async function createUser(data: IUser) {
         });
     
         await newUser.save();
-        console.log(newUser);
+        const allUsers =  User.find()
+        console.log(allUsers);
       } catch (err) {
         console.log(err);
         throw new Error("Failed to create user!");
