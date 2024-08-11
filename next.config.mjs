@@ -1,6 +1,6 @@
 module.exports = {
-    env: {
-      MONGO_URI: process.env.MONGO_URI,
-     
-    },
-  }
+  env: {
+    MONGODB_URL: process.env.MONGODB_URL,
+   
+  },
+}
