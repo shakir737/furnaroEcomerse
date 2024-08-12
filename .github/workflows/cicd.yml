@@ -1,4 +1,4 @@
-name: Deploy Next.js applicatio
+name: Deploy Next.js application
 
  push:
     branches: ["main"]
