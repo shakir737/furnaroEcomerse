@@ -18,8 +18,8 @@ jobs:
       - name: Publish image to docker hub
         run: docker push  shakir737/next-js:latest
   deploy:
-  needs: build
-  runs-on: self-hosted
+    needs: build
+    runs-on: self-hosted
   steps:
     - name: Pull image from docker hub
       run: docker pull shakir737/next-js:latest
