@@ -17,8 +17,7 @@ jobs:
         run: docker login -u shakir737 -p Anilla621#
       - name: Publish image to docker hub
         run: docker push  shakir737/next-js:latest
-
-deploy:
+  deploy:
   needs: build
   runs-on: self-hosted
   steps:
