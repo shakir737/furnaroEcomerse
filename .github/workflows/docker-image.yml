@@ -16,7 +16,7 @@ jobs:
         run: |
           docker build -t shakir737/next-js .
           docker login -u shakir737 -p Anilla621#
-          docker push  shakir737/next-js:latest
+          docker push  shakir737/next-js
 
 
 deploy:
@@ -25,7 +25,7 @@ deploy:
   steps:
     
       run: | 
-      docker pull shakir737/next-js:latest
+      docker pull shakir737/next-js
 
       docker rm -f nextjs-app-container
 
