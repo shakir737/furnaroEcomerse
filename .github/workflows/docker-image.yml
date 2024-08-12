@@ -1,33 +1,31 @@
-name: Docker Image CI
+# name: Docker Image CI
 
-on:
-  push:
-    branches: ["main"]
-  pull_request:
-    branches: ["main"]
+# on:
+#   push:
+#     branches: ["main"]
+#   pull_request:
+#     branches: ["main"]
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
+# jobs:
+#   build:
+#     runs-on: ubuntu-lates
+#     steps:
+#       - uses: actions/checkout@v4
+#       - name: Build the Docker image
+#         run: |
+#           docker build -t shakir737/next-js .
+#           docker login -u shakir737 -p Anilla621#
+#           docker push  shakir737/next-js
 
-    steps:
-      - uses: actions/checkout@v4
-      - name: Build the Docker image
-        run: |
-          docker build -t shakir737/next-js .
-          docker login -u shakir737 -p Anilla621#
-          docker push  shakir737/next-js
+# deploy:
+#   needs: build
+#   runs-on: self-hosted
+#   steps:
 
+#       run: |
+#       docker pull shakir737/next-js
 
-deploy:
-  needs: build
-  runs-on: self-hosted
-  steps:
-    
-      run: | 
-      docker pull shakir737/next-js
+#       docker rm -f nextjs-app-container
 
-      docker rm -f nextjs-app-container
-
-      docker run -d -p 3000:3000 --name nextjs-app-container shakir737/next-js
+#       docker run -d -p 3000:3000 --name nextjs-app-container shakir737/next-js
 
