@@ -1,24 +1,22 @@
 name: Deploy Next.js application
 
- push:
+on:
+  push:
     branches: ["main"]
-  pull_request:
-    branches: ["main"]
-
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Source
-      uses: actions/checkout@v4
-    - name: Build docker image
-      run: docker build -t shakir737/next-js .
-    - name: Login to docker hub
-      run: docker login -u shakir737 -p Anilla621#
-    - name: Publish image to docker hub
-      run: docker push  shakir737/next-js:latest
+      - name: Checkout Source
+        uses: actions/checkout@v4
+      - name: Build docker image
+        run: docker build -t shakir737/next-js .
+      - name: Login to docker hub
+        run: docker login -u shakir737 -p Anilla621#
+      - name: Publish image to docker hub
+        run: docker push  shakir737/next-js:latest
 
 deploy:
   needs: build
