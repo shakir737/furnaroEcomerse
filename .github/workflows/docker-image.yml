@@ -2,21 +2,15 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-       
-          run:  docker build -t shakir737/next-js .
-       
-          run:  docker login -u shakir737 -p Anilla621#
-
-          run:  docker push  shakir737/next-js:latest
+      - uses: actions/checkout@v4
+      - name: Build the Docker image
+        run: docker build . shakir737/next-js
