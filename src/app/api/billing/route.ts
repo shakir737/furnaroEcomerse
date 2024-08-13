@@ -6,7 +6,6 @@ export async function POST(req: Request) {
   try {
     const body = await req.json();
     const inputValidation = BillingInfoInputValidation.safeParse(body);
-
     if (!inputValidation.success) {
       return errorResponse(
         "Input validation failed",
