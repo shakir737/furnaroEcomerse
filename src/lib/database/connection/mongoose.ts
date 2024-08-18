@@ -25,7 +25,7 @@ export const connectToDatabase = async () => {
     return;
   }
   // mongodb+srv://shakirraza737:<password>@ecomerse.fxjt0iy.mongodb.net/?retryWrites=true&w=majority&appName=Ecomerse
-  const MONGODB_URL = `mongodb+srv://shakirraza737:Anilla621@ecomerse.fxjt0iy.mongodb.net/?retryWrites=true&w=majority&appName=Ecomerse.test`;
+  const MONGODB_URL = `mongodb+srv://shakirraza737:Anilla621@ecomerse.fxjt0iy.mongodb.net/test?retryWrites=true&w=majority&appName=Ecomerse`;
   try {
   await mongoose.connect(MONGODB_URL);
   isConnected = true;
